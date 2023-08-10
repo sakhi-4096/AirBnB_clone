@@ -12,7 +12,6 @@ git clone https://github.com/Basi-Letsholo/AirBnB_clone
 cd AirBnB_clone
 ```
 ## How to Use Command Interpreter
----
 | Commands  | Usage                                         | Functionality                              |
 | --------- | --------------------------------------------- | ------------------------------------------ |
 | `help`    | `help`                                        | displays all commands available            |
