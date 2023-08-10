@@ -12,7 +12,6 @@ git clone https://github.com/Basi-Letsholo/AirBnB_clone
 cd AirBnB_clone
 ```
 ## How to Use Command Interpreter
-```
 ---
 | Commands  | Usage                                         | Functionality                              |
 | --------- | --------------------------------------------- | ------------------------------------------ |
@@ -23,8 +22,8 @@ cd AirBnB_clone
 | `show`    | `User.show('123')`                            | retrieve an object from a file, a database |
 | `all`     | `User.all()`                                  | display all objects in class               |
 | `quit`    | `quit`                                        | exits                                      |
----
-```
+
+
 ## Usage
 Interactive Mode
 ```
