@@ -4,6 +4,9 @@ import uuid
 import datetime
 
 class BaseModel:
+    """
+    Added a docstring for demo purposes
+    """
 
     def __init__(self, id, created_at, updated_at):
         self.id = str(uuid.uuid4())
