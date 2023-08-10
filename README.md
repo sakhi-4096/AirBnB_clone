@@ -23,7 +23,7 @@ cd AirBnB_clone
 | `show`    | `User.show('123')`                            | retrieve an object from a file, a database |
 | `all`     | `User.all()`                                  | display all objects in class               |
 | `quit`    | `quit`                                        | exits                                      |
-
+---
 ```
 ## Usage
 Interactive Mode
