@@ -1,10 +1,29 @@
 #!/usr/bin/python3
+"""Class FileStorage"""
 
 import json
+from models.base_model import BaseModel
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+
 
 class FileStorage:
     __file_path = "file.json"
     __objects = {}
+
+    classes = {
+        "BaseModel": BaseModel,
+        "User": User,
+        "State": State,
+        "City": City,
+        "Amenity": Amenity,
+        "Place": Place,
+        "Review": Review
+    }
 
     def all(self):
         """Return the dictionary __objects."""
@@ -17,7 +36,8 @@ class FileStorage:
 
     def save(self):
         """Serialize __objects to the JSON file (path: __file_path)."""
-        serialized_objects = {key: obj.to_dict() for key, obj in self.__objects.items()}
+        serialized_objects = {key: obj.to_dict()
+                              for key, obj in self.__objects.items()}
         with open(self.__file_path, "w") as file:
             json.dump(serialized_objects, file)
 

@@ -1,9 +1,17 @@
 #!/usr/bin/python3
-
+"""Command interperter"""
 
 import cmd
-import sys
+from datetime import datetime
 from models.base_model import BaseModel
+from models.user import User
+from models import storage
+from models.amenity import Amenity
+from models.city import City
+from models.place import Place
+from models.review import Review
+from models.state import State
+import sys
 
 class HBNBCommand(cmd.Cmd):
     """
@@ -35,6 +43,18 @@ class HBNBCommand(cmd.Cmd):
         Do nothing on an empty line.
         """
         pass
+
+    def preloop(self):
+        """Initialize the classes dictionary."""
+        self.classes = {
+            "BaseModel": BaseModel,
+            "User": User,
+            "State": State,
+            "City": City,
+            "Amenity": Amenity,
+            "Place": Place,
+            "Review": Review
+        }
 
     def precmd(self, line):
         """
@@ -140,6 +160,7 @@ class HBNBCommand(cmd.Cmd):
                         obj = storage.all()[key]
                         setattr(obj, attr_name, attr_value)
                         obj.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
