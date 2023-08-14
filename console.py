@@ -14,34 +14,24 @@ from models.state import State
 import sys
 
 class HBNBCommand(cmd.Cmd):
-    """
-    Command interpreter for HBNB
-    """
+    """Command interpreter for HBNB."""
 
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        """
-        Exit the program.
-        """
+        """Exit the program."""
         return True
 
     def do_EOF(self, arg):
-        """
-        Exit the program on EOF (Ctrl+D).
-        """
+        """Exit the program on EOF (Ctrl+D)."""
         return True
 
     def do_help(self, arg):
-        """
-        Display help message.
-        """
+        """Display help message."""
         cmd.Cmd.do_help(self, arg)
 
     def emptyline(self):
-        """
-        Do nothing on an empty line.
-        """
+        """Do nothing on an empty line."""
         pass
 
     def preloop(self):
@@ -57,16 +47,13 @@ class HBNBCommand(cmd.Cmd):
         }
 
     def precmd(self, line):
-        """
-        Prints newline after prompt if non-interactive.
-        """
+        """Prints newline after prompt if non-interactive."""
         if not sys.stdin.isatty():
             print("")
         return line
 
     def do_create(self, arg):
-        """
-        """
+        """Create a new instance of BaseModel."""
         input_create = arg.split()
 
         if len(input_create) == 0:
@@ -79,8 +66,7 @@ class HBNBCommand(cmd.Cmd):
             print(new_base_model.id)
 
     def do_show(self, arg):
-        """
-        """
+        """Print the string representation of an instance."""
         input_show = arg.split()
 
         if len(input_show) == 0:
@@ -99,8 +85,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_destroy(self, arg):
-        """
-        """
+        """Delete an instance based on class name and id."""
         input_destroy = arg.split()
 
         if len(input_destroy) == 0:
@@ -120,8 +105,7 @@ class HBNBCommand(cmd.Cmd):
                     print("** no instance found **")
 
     def do_all(self, arg):
-        """
-        """
+        """Print all string representation of instances."""
         if arg and arg != "BaseModel":
             print("** class doesn't exist **")
         else:
@@ -132,8 +116,7 @@ class HBNBCommand(cmd.Cmd):
             print(instances)
 
     def do_update(self, arg):
-        """
-        """
+        """Update an instance based on class name and id."""
         input_update = arg.split()
 
         if len(input_update) == 0:
