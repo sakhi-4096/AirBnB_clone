@@ -2,6 +2,7 @@
 
 
 import cmd
+import sys
 from models.base_model import BaseModel
 
 class HBNBCommand(cmd.Cmd):
@@ -34,6 +35,14 @@ class HBNBCommand(cmd.Cmd):
         Do nothing on an empty line.
         """
         pass
+
+    def precmd(self, line):
+        """
+        Prints newline after prompt if non-interactive.
+        """
+        if not sys.stdin.isatty():
+            print("")
+        return line
 
     def do_create(self, arg):
         """
